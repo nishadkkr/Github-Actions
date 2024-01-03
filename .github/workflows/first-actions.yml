@@ -10,12 +10,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/setup-python@v2
 
-    - name: Install dependencies for python
-      run: |
-       sudo apt update
-       sudo apt install docker.io -y
-       sudo usermod -aG docker $USER
-       newgrp docker
     - name: Verfiy the docker installation
       run: |
         docker --version
