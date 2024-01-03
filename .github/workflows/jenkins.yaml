@@ -1,6 +1,9 @@
 name: Github action to run jenkins using docker image
 
-on: [push]
+on:
+  push:
+    paths:
+      'jenkins.yaml'
 
 jobs:
   build:
