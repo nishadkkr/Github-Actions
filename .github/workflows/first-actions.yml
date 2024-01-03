@@ -19,3 +19,7 @@ jobs:
     - name: Verfiy the docker installation
       run: |
         docker --version
+    - name: Pull Nginx image
+      run: |
+        docker pull nginx:latest
+        docker run -p 80:80 -d -it nginx:latest
