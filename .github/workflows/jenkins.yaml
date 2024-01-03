@@ -1,0 +1,19 @@
+name: Github action to run jenkins using docker image
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+    - name: Checkout Repository
+
+    - name: Verfiy the docker installation
+      run: |
+        docker --version
+    - name: Pull Jenkins image and run
+      run: |
+        docker pull jenkins:2.60.3
+        docker run -d -p 8080:8080 -it -v /home/ntech/jenkins-volume:/var/jenkins_home jenkins:2.60.3
+        
