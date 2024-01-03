@@ -13,7 +13,7 @@ jobs:
     - name: Install dependencies for python
       run: |
        sudo apt update
-       sudo apt install docker.io
+       sudo apt install docker.io -y
        sudo usermod -aG docker $USER
        newgrp docker
     - name: Verfiy the docker installation
