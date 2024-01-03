@@ -8,6 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Checkout Repository
+      uses: actions/setup-python@v2
 
     - name: Verfiy the docker installation
       run: |
