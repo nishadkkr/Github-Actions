@@ -16,7 +16,7 @@ jobs:
     - name: Verfiy the docker installation
       run: |
         docker --version
-    - name: Pull Jenkins image and run
+    - name: Pull Jenkins image and run on vm
       run: |
         docker pull jenkins/jenkins:lts-jdk17
         docker run -d -p 8080:8080 -p 5000:5000 -it -v jenkins_home:/var/jenkins_home --restart=on-failure jenkins/jenkins:lts-jdk17
